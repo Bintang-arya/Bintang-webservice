@@ -1,0 +1,99 @@
+Nama : Bintang Arya Widi Syahputra
+NIM : 22.01.53.0035
+
+<?php
+/** @var \Laravel\Lumen\Routing\Router $router */
+
+$router->get('/', function () use ($router) {
+    return $router->app->version();
+});
+
+// Roles
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/roles', 'RolesController@index');
+    $router->post('/roles', 'RolesController@store');
+    $router->get('/roles/{id}', 'RolesController@show');
+    $router->put('/roles/{id}', 'RolesController@update');
+    $router->delete('/roles/{id}', 'RolesController@destroy');
+});
+
+// Users
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/users', 'UsersController@index');
+    $router->post('/users', 'UsersController@store');
+    $router->get('/users/{id}', 'UsersController@show');
+    $router->put('/users/{id}', 'UsersController@update');
+    $router->delete('/users/{id}', 'UsersController@destroy');
+});
+
+// Customers
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/customers', 'CustomersController@index');
+    $router->post('/customers', 'CustomersController@store');
+    $router->get('/customers/{id}', 'CustomersController@show');
+    $router->put('/customers/{id}', 'CustomersController@update');
+    $router->delete('/customers/{id}', 'CustomersController@destroy');
+});
+
+// Branches
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/branches', 'BranchesController@index');
+    $router->post('/branches', 'BranchesController@store');
+    $router->get('/branches/{id}', 'BranchesController@show');
+    $router->put('/branches/{id}', 'BranchesController@update');
+    $router->delete('/branches/{id}', 'BranchesController@destroy');
+});
+
+// Employees
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/employees', 'EmployeesController@index');
+    $router->post('/employees', 'EmployeesController@store');
+    $router->get('/employees/{id}', 'EmployeesController@show');
+    $router->put('/employees/{id}', 'EmployeesController@update');
+    $router->delete('/employees/{id}', 'EmployeesController@destroy');
+});
+
+// Packages
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/packages', 'PackagesController@index');
+    $router->post('/packages', 'PackagesController@store');
+    $router->get('/packages/{id}', 'PackagesController@show');
+    $router->put('/packages/{id}', 'PackagesController@update');
+    $router->delete('/packages/{id}', 'PackagesController@destroy');
+});
+
+// Status
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/status', 'StatusController@index');
+    $router->post('/status', 'StatusController@store');
+    $router->get('/status/{id}', 'StatusController@show');
+    $router->put('/status/{id}', 'StatusController@update');
+    $router->delete('/status/{id}', 'StatusController@destroy');
+});
+
+// Transactions
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/transactions', 'TransactionsController@index');
+    $router->post('/transactions', 'TransactionsController@store');
+    $router->get('/transactions/{id}', 'TransactionsController@show');
+    $router->put('/transactions/{id}', 'TransactionsController@update');
+    $router->delete('/transactions/{id}', 'TransactionsController@destroy');
+});
+
+// Transaction Details
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/transaction-details', 'TransactionDetailsController@index');
+    $router->post('/transaction-details', 'TransactionDetailsController@store');
+    $router->get('/transaction-details/{id}', 'TransactionDetailsController@show');
+    $router->put('/transaction-details/{id}', 'TransactionDetailsController@update');
+    $router->delete('/transaction-details/{id}', 'TransactionDetailsController@destroy');
+});
+
+// Payments
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/payments', 'PaymentsController@index');
+    $router->post('/payments', 'PaymentsController@store');
+    $router->get('/payments/{id}', 'PaymentsController@show');
+    $router->put('/payments/{id}', 'PaymentsController@update');
+    $router->delete('/payments/{id}', 'PaymentsController@destroy');
+});
